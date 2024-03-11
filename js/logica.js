@@ -1,20 +1,20 @@
 let numeroAleatorio;
 
-    function generateMagicNumber() {
+    function generarNumero() {
       numeroAleatorio = Math.floor(Math.random() * 100) + 1;
     }
       
-    function showGameArea() {
+    function mostrarInput() {
       document.getElementById('startBtn').style.display = 'none';
       document.getElementById('gameArea').style.display = 'block';
     }
 
-    function checkGuess() {
-      var userGuess = parseInt(document.getElementById('guessInput').value);
+    function verificarNumero() {
+      let numeroIngresado = parseInt(document.getElementById('guessInput').value);
 
-      if (userGuess === numeroAleatorio) {
+      if (numeroIngresado === numeroAleatorio) {
         alert('¡Felicitaciones! Adivinaste el número.');
-      } else if (userGuess < numeroAleatorio) {
+      } else if (numeroIngresado < numeroAleatorio) {
         alert('El número que ingresaste es menor al número mágico. Intenta nuevamente.');
       } else {
         alert('El número que ingresaste es mayor al número mágico. Intenta nuevamente.');
@@ -22,10 +22,10 @@ let numeroAleatorio;
     }
 
     document.getElementById('startBtn').addEventListener('click', function() {
-      generateMagicNumber();
-      showGameArea();
+      generarNumero();
+     mostrarInput();
     });
 
     document.getElementById('guessBtn').addEventListener('click', function() {
-      checkGuess();
+     verificarNumero();
     });
